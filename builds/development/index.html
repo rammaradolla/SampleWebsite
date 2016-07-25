@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Roux Academy</title>
+  <!-- bower:css -->
+  <link rel="stylesheet" href="../../bower_components/normalize-css/normalize.css" />
+  <!-- endbower -->
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <section class="city">
+    <div class="container">
+      <img class="logo" src="images/misc/ralogo_monogram.png" alt="Roux Academy Logo">
+    </div>
+  </section>
+
+  <!-- bower:js -->
+  <!-- endbower -->
+
+  <script src="js/script.js"></script>
+  <script id="speakerstpl" type="text/template">
+    {{#speakers}}
+      <div class="speaker">
+        <h2>{{name}}</h2>
+        <h3>{{reknown}}</h3>
+        <p><img src="images/artists/{{shortname}}_tn.jpg" alt="Photo of {{name}}" />{{bio}}</p>
+      </div>
+    {{/speakers}}
+  </script>
+</body>
+</html>
