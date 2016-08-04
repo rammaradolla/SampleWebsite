@@ -77,6 +77,13 @@ jQuery(document).ready(function($){
         $(this).parent('ul').addClass('is-hidden').parent('.has-children').parent('ul').removeClass('moves-out');
     });
 
+    //close menu
+    $('.no-children').children('a').on('click', function(event){
+        closeNav();
+        toggleSearch('close')
+        $('.cd-overlay').removeClass('is-visible');
+    });
+
     function closeNav() {
         $('.cd-nav-trigger').removeClass('nav-is-visible');
         $('.cd-main-header').removeClass('nav-is-visible');
@@ -132,3 +139,40 @@ jQuery(document).ready(function($){
         }
     }
 });
+
+(function(angular) {
+    'use strict';
+    angular.module('ngViewExample', ['ngRoute'])
+        .config(['$routeProvider', '$locationProvider',
+            function($routeProvider, $locationProvider) {
+                $routeProvider
+                    .when('/', {
+                        templateUrl: '/templates/consultancy/overview.html'
+                    })
+                    .when('/consulting', {
+                        templateUrl: '/templates/consultancy/overview.html'
+                    })
+                    .when('/consulting/overview', {
+                        templateUrl: '/templates/consultancy/overview.html'
+                    })
+                    .when('/consulting/marketing', {
+                        templateUrl: 'templates/consultancy/marketing.html'
+                    });
+
+                //$locationProvider.html5Mode(true);
+            }])
+        .controller('MainCtrl', ['$route', '$routeParams', '$location',
+            function($route, $routeParams, $location) {
+                this.$route = $route;
+                this.$location = $location;
+                this.$routeParams = $routeParams;
+            }])
+        .controller('BookCtrl', ['$routeParams', function($routeParams) {
+            this.name = "BookCtrl";
+            this.params = $routeParams;
+        }])
+        .controller('ChapterCtrl', ['$routeParams', function($routeParams) {
+            this.name = "ChapterCtrl";
+            this.params = $routeParams;
+        }]);
+})(window.angular);

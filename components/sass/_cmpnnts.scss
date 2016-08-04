@@ -50,6 +50,10 @@ body {
      background: $color-3;
      min-height: 100vh;
      z-index: $content;
+     @include MQ(L) {
+       margin-top: 80px;
+     }
+     margin-top: 50px;
    }
 
    .cd-main-header {
@@ -561,9 +565,9 @@ body {
 
          > li {
            /* change the height according to your needs - you can even set height: auto */
-           height: 340px;
+           height: 30px;
            /* here you set the number of columns - use width percentage */
-           @include column(.23); // see partials > _layout.scss
+           @include column(.17); // see partials > _layout.scss
            margin-right: 2.66%;
            border-right: 1px solid $color-3;
            overflow: hidden;
@@ -571,8 +575,8 @@ body {
            overflow-y: auto;
            -webkit-overflow-scrolling: touch;
 
-           &:nth-child(4n+2) {
-             /* +2 because we have 2 list items with display:none */
+           &:last-child {
+             /* last child border right display:none */
              margin-right: 0;
              border-right: none;
            }
