@@ -157,7 +157,19 @@ jQuery(document).ready(function($){
                     })
                     .when('/consulting/marketing', {
                         templateUrl: 'templates/consultancy/marketing.html'
-                    });
+                    })
+                    .when('/data', {
+                        templateUrl: '/templates/data/overview.html'
+                    })
+                    .when('/data/overview', {
+                        templateUrl: '/templates/data/overview.html'
+                    })
+                    .when('/technology', {
+                        templateUrl: '/templates/data/overview.html'
+                    })
+                    .when('/technology/partners', {
+                        templateUrl: '/templates/technology/partners.html'
+                    })
 
                 //$locationProvider.html5Mode(true);
             }])

@@ -47,7 +47,7 @@ body {
    }
 
    .cd-main-content {
-     background: $color-3;
+     background: $color-4;
      min-height: 100vh;
      z-index: $content;
      @include MQ(L) {
@@ -60,6 +60,7 @@ body {
      height: $header-height-S;
      background: $color-4;
      z-index: $above-content;
+     border-bottom: 1px solid $color-3;
 
      .nav-is-fixed & {
        /* add .nav-is-fixed class to body if you want a fixed navigation on > 1170px */
@@ -565,7 +566,7 @@ body {
 
          > li {
            /* change the height according to your needs - you can even set height: auto */
-           height: 30px;
+           //height: 30px;
            /* here you set the number of columns - use width percentage */
            @include column(.17); // see partials > _layout.scss
            margin-right: 2.66%;
@@ -963,6 +964,14 @@ body {
    }
 
 //------Navigation Header end-------------------------
+.bg-blue-base {
 
+    input{
+      width:100%;
+      margin: 10px 0;
+      @include MQ(L) {
+        width:50%;
+      }
+    }
 
-
+}
